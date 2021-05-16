@@ -97,116 +97,12 @@ $login = null;
 		echo "</ul></td></tr></table>";
 		?>
 	</div>
-	<br>
+	<div class='mainPage'>
+	</div>
 	<div class="footer">
 		8(960)319-71-39 г. Заречный Пензенская область<br>
 		Горячая линия
 	</div>
 </body>
-
-
-<script>
-	function ajaxRequest(url, price, size) {
-		var httpRequest = new XMLHttpRequest();
-		httpRequest.onreadystatechange = function() {
-			alertResponse(httpRequest);
-		};
-		httpRequest.open('POST', url, true);
-		httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); //тип передаваемых данных закодирован.
-		let value = "price=" + price + "&size=" + size;
-		httpRequest.send(value);
-	}
-
-	function alertResponse(httpRequest) {
-		if (httpRequest.readyState == 4) {
-			if (httpRequest.status == 200) {
-				var responseDiv = document.getElementById('ajaxDiv');
-				responseDiv.innerHTML = httpRequest.responseText;
-			} else {
-				alert('Возникли проблемы с получением ответа от сервера.');
-			}
-		}
-	}
-
-	let i = 0;
-
-	function addSelect(node, text) {
-		delSelect(node) // очищаем предыдущее выделение
-		i = 0;
-		if (text != "") {
-			enumChildNodes(node, text);
-			if (i == 0)
-				alert('Совпадений нет');
-		} else {
-			alert("Вы не ввели слово для поиска");
-		}
-	}
-
-	function enumChildNodes(node, text) {
-		if (1 == node.nodeType) {
-			var child = node.firstChild;
-			while (child) {
-				var nextChild = child.nextSibling;
-				if (1 == child.nodeType) {
-					enumChildNodes(child, text);
-				} else if (3 == child.nodeType && child.nodeValue.trim() == text) {
-					i++;
-					var newSpan = document.createElement('span');
-					newSpan.className = 'selection';
-					newSpan.innerHTML = child.nodeValue;
-					node.replaceChild(newSpan, child);
-					selected = true;
-				}
-				child = nextChild;
-			}
-		}
-	}
-
-	function delSelect(node) {
-		if (1 == node.nodeType) {
-			var child = node.firstChild;
-			while (child) {
-				var nextChild = child.nextSibling;
-				if (1 == child.nodeType) {
-					delSelect(child);
-				} else {
-					if (node.className == 'selection') {
-						var textNode = node.firstChild; //текст
-						var parentN = node.parentNode; //внешний тэг node
-						parentN.replaceChild(textNode, node);
-						//node.remove();
-						console.log(node);
-						console.log(parentN);
-						console.log(textNode);
-					}
-				}
-				child = nextChild;
-			}
-		}
-	}
-
-	function ajaxRequestDeleteRecord(id, photo) {
-		var httpRequest = new XMLHttpRequest();
-		httpRequest.onreadystatechange = function() {
-			alertResponse(httpRequest);
-		};
-		httpRequest.open('POST', 'deleteRecord.php', true);
-		httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		let value = "id=" + id + "&photo=" + photo;
-		httpRequest.send(value);
-	}
-
-
-	function alertResponse(httpRequest) {
-		if (httpRequest.readyState == 4) {
-			if (httpRequest.status == 200) {
-				var responseDiv = document.getElementById('ajaxDiv');
-				responseDiv.innerHTML = httpRequest.responseText;
-			} else {
-				alert('Возникли проблемы с получением ответа от сервера.');
-			}
-		}
-	}
-</script>
 
 </html>

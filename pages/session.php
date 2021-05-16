@@ -83,7 +83,8 @@ $reservationPlaces = array();
         ?>
         <div id="AjaxDiv"></div>
     </div>
-    <br>
+    <div class='mainPage'>
+	</div>
     <div class="footer">
         8(960)319-71-39 г. Заречный Пензенская область<br>
         Горячая линия

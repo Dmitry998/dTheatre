@@ -28,4 +28,10 @@ if (isset($_POST['actor_id']) && isset($_POST['spectacle_id'])) {
         echo "<li><a href='actor.php?actor_id=$actor->id'>$actor->name $actor->surname</a> <button onclick=\"deleteActorForSpectacle($spectacle_id, $actor->id)\">Удалить актера</button></li>";
     }
     echo "</ul>";
+    echo "<h3>Добавить актера: </h3><select id='actors'>";
+    $res = $mysqli->query("SELECT actors.name as name, actors.surname as surname, actors.id as id FROM actors");
+    while ($actor = $res->fetch_object()) {
+        echo "<option>$actor->id | $actor->name $actor->surname</option>";
+    }
+    echo "</select> <button onclick=\"addActorForSpectacle($spectacle_id)\">Добавить актера</button>";
 }

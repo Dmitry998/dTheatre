@@ -52,11 +52,11 @@ $login = null;
 		<h1>Актёры нашего театра</h1>
 		<?php
 		$mysqli = new mysqli('localhost', 'root', '12345678', 'theatre');
-		echo "
+		if ($admin) {
+			echo "
 	   	<div class= formInput>
 		   <h2> Добавить Актера </h2>
 		   <form id='upload-container' action='../addActor.php' method ='post' enctype='multipart/form-data'>";
-		if ($admin) {
 			if (isset($_GET['status'])) {
 				$status = $_GET['status'];
 				switch ($status) {
@@ -89,8 +89,7 @@ $login = null;
 		}
 		$res = $mysqli->query('SELECT * From actors');
 		echo "<div id=ajaxDiv>";
-		echo "<table>"; //<tr><th></th><th></th><th></th><th></th>
-		//echo '</tr>';
+		echo "<table>";
 
 		echo "<tr>"; // new
 		$indexRow = 0;
@@ -111,24 +110,12 @@ $login = null;
 			}
 			$photo_str = json_encode($photo);
 			$indexRow++;
-
-			/*if($admin)
-			{
-			echo"<td><a id='buttonA' href='loadChangeRecord.php?id=$id'></a></td>
-			<td><button onclick='ajaxRequestDeleteRecord($id,$photo_str)'></button></td>"; // <a id='buttonA' href='deleteRecord.php?id=$id&photo=$photo'> Удалить </a>
-			}
-			else
-			{
-				if($login!=null)
-				{
-					echo "<td><a id='buttonA' href='addShoeToBasket.php?idUser=$userid&idShoe=$id'></a></td>"; //"<td><button onclick='ajaxRequestDeleteRecord($id,$photo_str)'>Купить</button></td>";
-				}
-			}*/
 		}
 		echo "</tr></table></div>";
 		?>
 	</div>
-	<br>
+	<div class='mainPage'>
+	</div>
 	<div class="footer">
 		8(960)319-71-39 г. Заречный Пензенская область<br>
 		Горячая линия

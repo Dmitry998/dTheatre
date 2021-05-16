@@ -117,25 +117,20 @@ $spectacle_id = null;
 		if($admin) {
 			echo "<div id='sessions'></div>";
 		}
-		echo "<h3>Сеансы:</h3>";
-		echo "<div id='seansForSpectacle'><ul>";
-		$res = $mysqli->query("SELECT id, DATE_FORMAT(date, '%d.%m.%Y %H:%i') as date FROM sessions Where spectacle_id=$spectacle_id");
-		while ($session = $res->fetch_object()) {
-			echo "<li><a href='session.php?session_id=$session->id'>$session->date</a></li>";
-		}
-		echo "</ul></div>";
-		if ($admin) {
-			echo "<h3>Добавить сеанс: </h3>";
-			echo "Дата и время <input type='datetime'></input><br>";
-			echo "Цена для мест 1 ряда <input type='number'></input><br>";
-			echo "Цена для мест 2 ряда <input type='number'></input><br>";
-			echo "Цена для мест 3 ряда <input type='number'></input><br>";
-			echo "<button onclick=\"addSeansForSpectacle($spectacle_id)\">Добавить сеанс</button>";
+		else {
+			echo "<h3>Сеансы:</h3>";
+			echo "<div id='seansForSpectacle'><ul>";
+			$res = $mysqli->query("SELECT id, DATE_FORMAT(date, '%d.%m.%Y %H:%i') as date FROM sessions Where spectacle_id=$spectacle_id");
+			while ($session = $res->fetch_object()) {
+				echo "<li><a href='session.php?session_id=$session->id'>$session->date</a></li>";
+			}
+			echo "</ul></div>";
 		}
 		echo "</td></tr></table>";
 		?>
 	</div>
-	<br>
+	<div class='mainPage'>
+	</div>
 	<div class="footer">
 		8(960)319-71-39 г. Заречный Пензенская область<br>
 		Горячая линия

@@ -75,7 +75,7 @@ $login = null;
 				$photo = '../Files/noPhoto.jpg';
 			}
 			if ($admin) {
-				echo "<td><a id='actor' href='spectacle.php?spectacle_id=$id'><img src='$photo' alt = 'Фото афиши' width='290' height='400'></img>$name</a><br><a id='actor' href='spectacle.php?spectacle_id=$id&change=1'>Редактировать</a><br><button onclick=\"deleteSpectacle('../deleteSpectacle.php',$id)\">Удалить</button><br></td>";
+				echo "<td><a id='actor' href='spectacle.php?spectacle_id=$id'><img src='$photo' alt = 'Фото афиши' width='290' height='400'></img>$name</a><br><button onclick=\"deleteSpectacle('../deleteSpectacle.php',$id)\">Удалить</button><br></td>";
 			} else {
 				echo "<td><a id='actor' href='spectacle.php?spectacle_id=$id'><img src='$photo' alt = 'Фото афиши' width='290' height='400'></img>$name</a></td>";
 			}
@@ -112,7 +112,8 @@ $login = null;
 		}
 		?>
 	</div>
-	<br>
+	<div class='mainPage'>
+	</div>
 	<div class="footer">
 		8(960)319-71-39 г. Заречный Пензенская область<br>
 		Горячая линия
