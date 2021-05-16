@@ -4,7 +4,7 @@ html {
 
 body {
     margin: 0;
-    color: #fff;
+    color: black;
     /* Растягиваем body по высоте html */
     min-height: 100%;
     display: grid;
@@ -155,6 +155,37 @@ h3 {
 
 #tableActor a:hover {
     color: #7aa899;
+}
+
+#allSessions table {
+    border: 2px solid #28444f;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    margin: center;
+    text-align: left;
+    color: #28444f;
+}
+
+#allSessions td {
+    text-align: center;
+    border: 2px solid #28444f;
+}
+
+.about {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    margin: center;
+    text-align: left;
+    color: #28444f;
+    font-size: 20pt;
+}
+
+#allSessions th {
+    text-align: center;
+    border: 2px solid #28444f;
 }
 
 #ajaxDiv table {
@@ -317,6 +348,15 @@ th {
     cursor: pointer;
 }
 
+.mestaExample {
+    float: left;
+    width: 60px;
+    height: 60px;
+    background: silver;
+    margin: 5px;
+    text-align: center;
+}
+
 #actorsFromSpectacle button {
     background-color: #28444f;
     color: white;
@@ -325,4 +365,28 @@ th {
 #actorsFromSpectacle button:hover {
     background-color: #28444f;
     color: red;
+}
+
+#count_ {
+    color: #28444f;
+    font-size: 18pt;
+}
+
+#status {
+    color: green;
+    font-size: 18pt;
+}
+
+.legend table {
+    border-collapse: collapse;
+    margin: center;
+    text-align: left;
+}
+
+.legend td {
+    border: none;
+    font-size: 18px;
+    margin: center;
+    height: 80px;
+    color: #28444f;
 }
