@@ -30,7 +30,8 @@ if (isset($_POST['actor_id'])) {
 $mysqli = new mysqli('localhost', 'root', '12345678', 'theatre');
 $res = $mysqli->query('SELECT * From actors');
 echo "<table>";
-echo "<tr>";
+
+echo "<tr>"; // new
 $indexRow = 0;
 while ($actor =  $res->fetch_object()) {
     $id = $actor->id;
@@ -43,7 +44,7 @@ while ($actor =  $res->fetch_object()) {
         $photo = '../Files/noPhoto.jpg';
     }
     if ($admin) {
-        echo "<td><a id='actor' href='actor.php?actor_id=$id'><img src='$photo' alt = 'фото актера' width='290' height='400'></img> $actor->name $actor->surname</a><button onclick=\"deleteActor('$id)\">Удалить</button><br></td>";
+        echo "<td><a id='actor' href='actor.php?actor_id=$id'><img src='$photo' alt = 'фото актера' width='290' height='400'></img> $actor->name $actor->surname</a><button onclick=\"deleteActor($id)\">Удалить</button><br></td>";
     } else {
         echo "<td><a id='actor' href='actor.php?actor_id=$id'><img src='$photo' alt = 'фото актера' width='290' height='400'></img> $actor->name $actor->surname</a></td>";
     }

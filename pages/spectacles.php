@@ -88,13 +88,13 @@ $login = null;
 				$status = $_GET['status'];
 				switch($status){
 					case 1: 
-						echo '<p>Запись добавлена успешно </p>';
+						echo "'<div style='color: green'>' Спектакль успешно добавлен '</div><hr>';";
 						break;
 					case 2:
-						echo '<p> Не удалось загрузить файл </p>';
+						echo "'<div style='color: red'>' Не удалось добавить спектакль '</div><hr>';";
 						break;
 					case 3:
-						echo '<p> Возникла ошибка! </p>';
+						echo "'<div style='color: red'>' Произошла ошибка '</div><hr>';";
 						break;
 				}
 			}
@@ -115,7 +115,7 @@ $login = null;
 	<div class='mainPage'>
 	</div>
 	<div class="footer">
-		8(960)319-71-39 г. Заречный Пензенская область<br>
+		   г. Пенза телефон 65-55-21<br>
 		Горячая линия
 	</div>
 </body>

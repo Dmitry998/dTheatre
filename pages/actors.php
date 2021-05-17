@@ -117,7 +117,7 @@ $login = null;
 	<div class='mainPage'>
 	</div>
 	<div class="footer">
-		8(960)319-71-39 г. Заречный Пензенская область<br>
+		   г. Пенза телефон 65-55-21<br>
 		Горячая линия
 	</div>
 </body>
@@ -138,7 +138,6 @@ $login = null;
 	function alertResponse(httpRequest) {
 		if (httpRequest.readyState == 4) {
 			if (httpRequest.status == 200) {
-				alert('Ответ получен.');
 				var responseDiv = document.getElementById('ajaxDiv');
 				responseDiv.innerHTML = httpRequest.responseText;
 			} else {

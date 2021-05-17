@@ -37,8 +37,8 @@ $login = null;
 							$admin = true;
 						}
 
-						echo "<li><a href='basket.php'>Вы вошли как $login </a></li>
-					<li><a href='exit.php'>Выход</a></li>";
+						echo "<li><a href='userTickets.php'>Вы вошли как $login </a></li>
+					<li><a href='../exit.php'>Выход</a></li>";
 					} else {
 						echo "<li><a href='../authForm.php'>Вход</a></li>
 					<li><a href='../registrationForm.php'>Регистрация</a></li>";
@@ -100,7 +100,7 @@ $login = null;
 	<div class='mainPage'>
 	</div>
 	<div class="footer">
-		8(960)319-71-39 г. Заречный Пензенская область<br>
+		   г. Пенза телефон 65-55-21<br>
 		Горячая линия
 	</div>
 </body>

@@ -132,7 +132,7 @@ $spectacle_id = null;
 	<div class='mainPage'>
 	</div>
 	<div class="footer">
-		8(960)319-71-39 г. Заречный Пензенская область<br>
+		   г. Пенза телефон 65-55-21<br>
 		Горячая линия
 	</div>
 </body>
