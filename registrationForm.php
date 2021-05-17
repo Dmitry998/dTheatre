@@ -25,7 +25,7 @@
 						$user = $res->fetch_object();
 						$login = $user->login;
 
-						echo "<li><a href='basket.php'>Вы вошли как $login </a></li>
+						echo "<li><a href='pages/userTickets.php'>Вы вошли как $login </a></li>
 				<li><a href='exit.php'>Выход</a></li>";
 					} else {
 						echo "<li><a href='authForm.php'>Вход</a></li>
@@ -48,6 +48,7 @@
 			}
 			echo "<form action='registration.php' method ='post'> 
             <p>Логин <input type='text' name ='login' value=''></p>
+			<p>Почта <input type='text' name ='email' value=''></p>
             <p>Пароль <input type='password' name ='password' value=''></p>
             <p>Проверка пароля <input type='password' name ='password2' value=''></p>
             <p><button>Зарегистироваться</button></p>

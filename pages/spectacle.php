@@ -44,7 +44,7 @@ $spectacle_id = null;
 						if ($role == 'admin') {
 							$admin = true;
 						}
-						echo "<li><a href='basket.php'>Вы вошли как $login </a></li>
+						echo "<li><a href='userTickets.php'>Вы вошли как $login </a></li>
 					<li><a href='../exit.php'>Выход</a></li>";
 					} else {
 						echo "<li><a href='../authForm.php'>Вход</a></li>

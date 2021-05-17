@@ -24,7 +24,7 @@
 				$user = $res->fetch_object();
 				$login = $user->login;
 
-				echo "<li><a href='basket.php'>Вы вошли как $login </a></li>
+				echo "<li><a href='pages/userTickets.php'>Вы вошли как $login </a></li>
 				<li><a href='exit.php'>Выход</a></li>";
 			}
 			else

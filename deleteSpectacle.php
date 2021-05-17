@@ -18,24 +18,6 @@ if (isset($_SESSION['userid'])) {
     }
 }
 
-
-/*if (isset($_POST['id']) && isset($_POST['photo'])) {
-    $id = $_POST['id'];
-    $photo = $_POST['photo'];
-    if ($photo != "")
-        unlink($photo);
-    $mysqli = new mysqli('localhost', 'root', '12345678', 'Shoe_store');
-    $stmt = $mysqli->prepare("DELETE FROM shoes WHERE ID=?");
-    $stmt->bind_param('i', $id);
-    $stmt->execute();
-
-
-    /// удаление из корзины
-    $stmt2 = $mysqli->prepare("DELETE FROM basket WHERE idShoe=?");
-    $stmt2->bind_param('i', $id);
-    $stmt2->execute();
-}*/
-
 if(isset($_POST['spectacle_id'])) {
     $id = $_POST['spectacle_id'];
     $mysqli = new mysqli('localhost', 'root', '12345678', 'theatre');

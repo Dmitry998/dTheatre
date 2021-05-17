@@ -14,7 +14,7 @@ if (isset($_COOKIE['token'])) {
 function ConnectDB()
 {
 	global $mysqli;
-	$mysqli = new mysqli('localhost', 'root', '12345678', 'Shoe_store');
+	$mysqli = new mysqli('localhost', 'root', '12345678', 'theatre');
 }
 
 function LogIn($userid)
@@ -54,7 +54,7 @@ function LogIn($userid)
 						$user = $res->fetch_object();
 						$login = $user->login;
 
-						echo "<li><a href='basket.php'>Вы вошли как $login </a></li>
+						echo "<li><a href='pages/userTickets.php'>Вы вошли как $login </a></li>
 				<li><a href='exit.php'>Выход</a></li>";
 					} else {
 						echo "<li><a href='authForm.php'>Вход</a></li>
@@ -74,6 +74,7 @@ function LogIn($userid)
 		
 		<p> Ежегодно театр выпускает 5-6 премьер, каждая из которых становится заметным событием в культурной жизни города. За 27 творческих сезонов было поставлено более 170 спектаклей и представлений для детей и взрослых.</p></div>";
 		echo "<h2>Все сеансы</h2>";
+		$mysqli = new mysqli('localhost', 'root', '12345678', 'theatre');
 		$res = $mysqli->query("SELECT sessions.id as id, DATE_FORMAT(sessions.date, '%d.%m.%Y %H:%i') as date, spectacles.name as name FROM sessions INNER JOIN spectacles ON spectacles.id=sessions.spectacle_id ORDER BY date");
 		echo "<div id= allSessions>";
 		echo "<table>";
