@@ -26,7 +26,7 @@ if(isset($_POST['place_id'])) {
     $stmt->execute();
 }
 echo '<div class=formInput> <h3>Бронь снята<h3></div><hr>';
-$res = $mysqli->query("SELECT places.id as idPlace, DATE_FORMAT(tickets.date_res, '%d.%m.%Y %H:%i') as date, tickets.pz as pz, places.row as r, places.place as place, places.price as price, places.number as number, spectacles.name as name FROM tickets INNER JOIN places ON tickets.place_id=places.id INNER JOIN sessions ON places.session_id=sessions.id INNER JOIN spectacles ON sessions.spectacle_id=spectacles.id WHERE tickets.user_id=$userid");
+$res = $mysqli->query("SELECT users.login as login, users.email as email, places.id as idPlace, DATE_FORMAT(tickets.date_res, '%d.%m.%Y %H:%i') as date, tickets.pz as pz, places.row as r, places.place as place, places.price as price, places.number as number, spectacles.name as name FROM tickets INNER JOIN places ON tickets.place_id=places.id INNER JOIN sessions ON places.session_id=sessions.id INNER JOIN spectacles ON sessions.spectacle_id=spectacles.id INNER JOIN users ON tickets.user_id=users.id WHERE tickets.pz='Бронь'");
 echo "<table>";
 if(!$admin){
     echo "<tr><th>Спектакль</th><th>Дата сеанса</th><th>Ряд</th><th>Место</th><th>Цена</th><th>Статус</th></tr>";
